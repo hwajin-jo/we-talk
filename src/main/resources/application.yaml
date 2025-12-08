@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: wetalk
+
+  datasource:
+    url: jdbc:h2:mem://localhost/~/test
+    driver-class-name: org.h2.Driver
+    username: sa
+
+    h2:
+      console:
+        enabled: true
