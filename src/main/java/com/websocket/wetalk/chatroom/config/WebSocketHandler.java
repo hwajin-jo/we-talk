@@ -1,4 +1,4 @@
-package com.websocket.wetalk.chat.config;
+package com.websocket.wetalk.chatroom.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -11,11 +11,6 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketHandler implements WebSocketMessageBrokerConfigurer {
-    @Override
-    public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/sub");
-        registry.setApplicationDestinationPrefixes("/pub");
-    }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
@@ -23,5 +18,11 @@ public class WebSocketHandler implements WebSocketMessageBrokerConfigurer {
                 .addEndpoint("/ws-stomp")
                 .setAllowedOrigins("*")
                 .withSockJS();
+    }
+
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry registry) {
+        registry.enableSimpleBroker("/topic"); // / sub 브로커 한테 전달
+        registry.setApplicationDestinationPrefixes("/app"); // // pub 서버에게 전달
     }
 }

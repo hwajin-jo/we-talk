@@ -1,5 +1,6 @@
-package com.websocket.wetalk.chat.entity;
+package com.websocket.wetalk.chatroom.entity;
 
+import com.websocket.wetalk.memberchatroom.MemberChatRoom;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class ChatRoom {
     private String roomName;
 
     @OneToMany(mappedBy = "chatRoom")
-    private List<ChatParticipants> roomList = new ArrayList<>();
+    private List<MemberChatRoom> roomList = new ArrayList<>();
     private LocalDateTime createAt;
 
     @Builder

@@ -1,5 +1,7 @@
-package com.websocket.wetalk.chat.entity;
+package com.websocket.wetalk.memberchatroom;
 
+import com.websocket.wetalk.chatroom.entity.ChatRoom;
+import com.websocket.wetalk.member.entity.Member;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @Entity
-public class ChatParticipants {
+public class MemberChatRoom {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +21,6 @@ public class ChatParticipants {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
-    User user;
+    Member member;
 
 }

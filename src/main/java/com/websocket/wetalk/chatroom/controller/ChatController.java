@@ -1,8 +1,7 @@
-package com.websocket.wetalk.chat.controller;
+package com.websocket.wetalk.chatroom.controller;
 
-import com.websocket.wetalk.chat.dto.ChatMessageDto;
-import com.websocket.wetalk.chat.dto.CreateChatRoomRespDto;
-import com.websocket.wetalk.chat.service.ChatService;
+import com.websocket.wetalk.chatroom.dto.CreateChatRoomRespDto;
+import com.websocket.wetalk.chatroom.service.ChatService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,14 +28,4 @@ public class ChatController {
             return new CreateChatRoomRespDto(-1, "unKnown error", "-1");
         }
     }
-
-//    public void sendMessage(ChatMessageDto messageDto) {
-//        try {
-////            if (messageDto.getMessageType().equals(ChatMessageDto.MessageType.ENTER)) {
-////                messageDto.setMessage();
-//            }
-//        } catch (Exception e) {
-//            log.error("ChatController sendMessage error = {}", e.getMessage());
-//        }
-//    }
 }

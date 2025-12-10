@@ -1,7 +1,7 @@
-package com.websocket.wetalk.chat.service;
+package com.websocket.wetalk.chatroom.service;
 
-import com.websocket.wetalk.chat.entity.ChatRoom;
-import com.websocket.wetalk.chat.repository.ChatRepository;
+import com.websocket.wetalk.chatroom.entity.ChatRoom;
+import com.websocket.wetalk.chatroom.repository.ChatRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

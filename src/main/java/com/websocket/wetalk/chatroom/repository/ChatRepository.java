@@ -1,6 +1,6 @@
-package com.websocket.wetalk.chat.repository;
+package com.websocket.wetalk.chatroom.repository;
 
-import com.websocket.wetalk.chat.entity.ChatRoom;
+import com.websocket.wetalk.chatroom.entity.ChatRoom;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

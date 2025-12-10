@@ -1,4 +1,4 @@
-package com.websocket.wetalk.chat.dto;
+package com.websocket.wetalk.chatroom.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
