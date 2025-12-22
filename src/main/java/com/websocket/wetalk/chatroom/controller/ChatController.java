@@ -20,12 +20,12 @@ public class ChatController {
     @PostMapping("/room/create")
     public CreateChatRoomRespDto createChatRoom(@RequestParam String roomName) {
         try {
-            String roomId = chatService.insertChatRoom(roomName);
+            Long roomId = chatService.createChatRoom(roomName);
             log.info("roomId = {}", roomId);
             return new CreateChatRoomRespDto(0, "create chat room", roomId);
         } catch (Exception e) {
             log.error("ChatController createChatRoom error = {}", e.getMessage());
-            return new CreateChatRoomRespDto(-1, "unKnown error", "-1");
+            return new CreateChatRoomRespDto(-1, "unKnown error", -1L);
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.websocket.wetalk.memberchatroom;
+package com.websocket.wetalk.memberchatroom.entity;
 
 import com.websocket.wetalk.chatroom.entity.ChatRoom;
 import com.websocket.wetalk.member.entity.Member;
@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 public class MemberChatRoom {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -22,5 +21,4 @@ public class MemberChatRoom {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     Member member;
-
 }

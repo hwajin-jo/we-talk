@@ -1,4 +1,4 @@
-package com.websocket.wetalk.chatroom.config;
+package com.websocket.wetalk.websocket;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
@@ -15,14 +15,13 @@ public class WebSocketHandler implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry
-                .addEndpoint("/ws-stomp")
-                .setAllowedOrigins("*")
-                .withSockJS();
+                .addEndpoint("/connect")
+                .setAllowedOriginPatterns("*");
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        registry.enableSimpleBroker("/topic"); // / sub 브로커 한테 전달
-        registry.setApplicationDestinationPrefixes("/app"); // // pub 서버에게 전달
+        registry.enableSimpleBroker("/topic"); // /sub ==> 브로커 한테 전달, 특정 토픽을 구독
+        registry.setApplicationDestinationPrefixes("/app"); // /pub ==> 서버에게 전달, 메세지를 발행
     }
 }

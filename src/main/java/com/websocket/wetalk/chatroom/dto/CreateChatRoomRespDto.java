@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class CreateChatRoomRespDto {
     int code;
     String message;
-    String roomId;
+    Long roomId;
 }

@@ -1,6 +1,6 @@
 package com.websocket.wetalk.member.entity;
 
-import com.websocket.wetalk.memberchatroom.MemberChatRoom;
+import com.websocket.wetalk.memberchatroom.entity.MemberChatRoom;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,8 +15,9 @@ public class Member {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "member_id")
     Long id;
-    String username;
+    String nickname;
 
     @OneToMany(mappedBy = "member")
     List<MemberChatRoom> memberChatRooms = new ArrayList<>();
