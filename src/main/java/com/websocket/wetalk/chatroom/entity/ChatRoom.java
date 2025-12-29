@@ -29,4 +29,13 @@ public class ChatRoom {
     public ChatRoom(String roomName) {
         this.roomName = roomName;
     }
+
+    public void updateRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+
+    public void addMemberChatRoom(MemberChatRoom memberChatRoom) {
+        roomList.add(memberChatRoom);
+        memberChatRoom.setChatRoom(this);
+    }
 }
